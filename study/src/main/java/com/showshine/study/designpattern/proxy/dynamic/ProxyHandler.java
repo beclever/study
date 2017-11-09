@@ -1,11 +1,11 @@
-package com.showshine.study.proxy.dynamic;
+package com.showshine.study.designpattern.proxy.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * 代理类。用来代理和封装真实主题
+ * 动态代理模式代理类。用来代理和封装真实主题
  * 
  * @author showshine
  * @since 1.0

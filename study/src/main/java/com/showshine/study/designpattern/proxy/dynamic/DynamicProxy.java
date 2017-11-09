@@ -1,11 +1,11 @@
-package com.showshine.study.proxy.dynamic;
+package com.showshine.study.designpattern.proxy.dynamic;
 
 import java.io.FileOutputStream;
 
 import sun.misc.ProxyGenerator;
 
 /**
- * 客户端。使用代理类和主题接口完成一些工作
+ * 动态代理模式客户端。使用代理类和主题接口完成一些工作
  * 
  * @author showshine
  * @since 1.0

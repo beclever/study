@@ -1,7 +1,7 @@
-package com.showshine.study.proxy.dynamic;
+package com.showshine.study.designpattern.proxy.dynamic;
 
 /**
- * 真实主题。真实实现业务逻辑的类
+ * 动态代理模式真实主题。真实实现业务逻辑的类
  * 
  * @author showshine
  * @since 1.0
