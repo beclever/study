@@ -1,7 +1,6 @@
 package com.showshine.study.proxy.dynamic;
 
 import java.io.FileOutputStream;
-import java.lang.reflect.Proxy;
 
 import sun.misc.ProxyGenerator;
 
@@ -15,10 +14,10 @@ import sun.misc.ProxyGenerator;
 public class DynamicProxy {
 	public static void main(String args[]) {
 		RealSubject real = new RealSubject();
-		Subject proxySubject = (Subject) Proxy.newProxyInstance(Subject.class.getClassLoader(),
-				new Class[] { Subject.class }, new ProxyHandler(real));
+		
+		Subject proxySubject = (Subject)new ProxyHandler().getProxy(real);
 
-		proxySubject.doSomething();
+		proxySubject.doSomething("showshine");
 
 		// write proxySubject class binary data to file
 		createProxyClassFile();

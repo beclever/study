@@ -9,5 +9,5 @@ package com.showshine.study.proxy.dynamic;
  */
 public interface Subject {
 
-	public void doSomething();
+	public void doSomething(String someone);
 }

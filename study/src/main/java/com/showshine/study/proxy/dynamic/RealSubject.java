@@ -8,7 +8,8 @@ package com.showshine.study.proxy.dynamic;
  * @version 2017年11月9日
  */
 public class RealSubject implements Subject {
-	public void doSomething() {
-		System.out.println("call doSomething()");
+	
+	public void doSomething(String someone) {
+		System.out.println(someone + " call doSomething()");
 	}
 }
