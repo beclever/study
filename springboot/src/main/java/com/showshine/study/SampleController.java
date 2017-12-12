@@ -3,14 +3,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @EnableAutoConfiguration
-public class SampleController extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer {
+public class SampleController extends org.springframework.boot.web.support.SpringBootServletInitializer implements EmbeddedServletContainerCustomizer {
 
     @RequestMapping("/")
     @ResponseBody
