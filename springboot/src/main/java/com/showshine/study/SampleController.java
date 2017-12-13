@@ -1,4 +1,4 @@
-package com.showshine.study;
+/*package com.showshine.study;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
@@ -25,4 +25,4 @@ public class SampleController extends org.springframework.boot.web.support.Sprin
 	public void customize(ConfigurableEmbeddedServletContainer container) {
 		container.setPort(8081);  
 	}
-}
+}*/
