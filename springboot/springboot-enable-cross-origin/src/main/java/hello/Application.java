@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 public class Application {
 
-	//8080:run
+	//8080:run 
 	//9000:mvn spring-boot:run -Dserver.port=9000
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
