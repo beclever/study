@@ -9,19 +9,19 @@ package com.showshine.study.wait_for_multi_thread;
  * 
  */
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class CountBigDataByJoinTest {
 
-	private static AtomicInteger ai = new AtomicInteger(0);
+	private static int ai1 = 0;
+	private static int ai2 = 0;
+	private static int n = 2000000000;
 	
 	public static void main(String[] args) throws InterruptedException {
 		long start = System.nanoTime();
 		Thread countThread1 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for(int i =0; i < 10*1000*10*10*10; i++) {
-					ai.incrementAndGet();
+				for(int i =0; i < n/2; i++) {
+					ai1++;
 				}
 			}
 		});
@@ -29,15 +29,15 @@ public class CountBigDataByJoinTest {
 		Thread countThread2 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for(int i =0; i < 10*1000*10; i++) {
-					ai.incrementAndGet();
+				for(int i =0; i < n/2; i++) {
+					ai2++;
 				}
 			}
 		});
 		countThread2.start();
 		countThread1.join();
 		countThread2.join();
-		System.out.println(ai.get());
+		System.out.println(ai1+ ai2);
 		System.out.println("use " + (System.nanoTime() - start)/(1000 * 1000) + " ms");
 	}
 

@@ -16,15 +16,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CountBigDataByCyclicBarrierTest {
 
 	static CyclicBarrier cb = new CyclicBarrier(3);
-	private static AtomicInteger ai = new AtomicInteger(0);
+	private static int ai1 = 0;
+	private static int ai2 = 0;
 	
 	public static void main(String[] args) throws InterruptedException, BrokenBarrierException {
 		long start = System.nanoTime();
 		Thread countThread1 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for(int i =0; i < 10*1000*10*10*10; i++) {
-					ai.incrementAndGet();
+				for(int i =0; i < 100000000; i++) {
+					ai1++;
 				}
 				try {
 					cb.await();
@@ -37,8 +38,8 @@ public class CountBigDataByCyclicBarrierTest {
 		Thread countThread2 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for(int i =0; i < 10*1000*10; i++) {
-					ai.incrementAndGet();
+				for(int i =0; i < 100000000; i++) {
+					ai2++;
 				}
 				try {
 					cb.await();
@@ -49,7 +50,7 @@ public class CountBigDataByCyclicBarrierTest {
 		});
 		countThread2.start();
 		cb.await();
-		System.out.println(ai.get());
+		System.out.println(ai1 + ai2);
 		System.out.println("use " + (System.nanoTime() - start)/(1000 * 1000) + " ms");
 	}
 
